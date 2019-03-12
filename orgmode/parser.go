@@ -1,4 +1,4 @@
-package main
+package orgmode
 
 import (
 	"github.com/alecthomas/participle"
