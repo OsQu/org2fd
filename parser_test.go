@@ -2,25 +2,19 @@ package main
 
 import (
 	"github.com/k0kubun/pp"
-	"log"
 )
 
 func ExampleSimpleParsing() {
-	input := `
-age = 21
-name = "Osku rokkaa"
+	input := `* This is a headline`
+	orgMode := OrgMode{}
+	err := Parse(input, &orgMode)
 
-[address]
-city = "Beverly Hills"
-postal_code = 90210
-`
-	ini := INI{}
-	err := Build(input, &ini)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
-	pp.Print(ini)
+	pp.Print(orgMode)
+
 	// Output:
 	// TODO
 }
