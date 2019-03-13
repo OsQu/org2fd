@@ -7,7 +7,8 @@ import (
 
 var orgModeLexer = lexer.Must(lexer.Regexp(
 	`(\s+)` +
-		`|(?P<String>.*$)`,
+		`|(?P<Dot>\*)` +
+		`|(?P<String>.*)`,
 ))
 
 type OrgMode struct {
@@ -19,7 +20,7 @@ type Headline struct {
 }
 
 type Line struct {
-	String *string `@String`
+	String *string `"*" @String`
 }
 
 // Parse parses input to orgMode representing AST

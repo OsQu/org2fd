@@ -11,7 +11,7 @@ func Format(orgMode *orgmode.OrgMode) string {
 	var builder strings.Builder
 
 	for _, headline := range orgMode.Headlines {
-		builder.WriteString(fmt.Sprintf("- %s", *headline.Line.String))
+		builder.WriteString(fmt.Sprintf("- %s\n", *headline.Line.String))
 	}
 
 	return builder.String()
